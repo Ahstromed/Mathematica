@@ -1,0 +1,1502 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     51508,       1493]
+NotebookOptionsPosition[     49853,       1434]
+NotebookOutlinePosition[     50224,       1450]
+CellTagsIndexPosition[     50181,       1447]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", "\[IndentingNewLine]", " ", 
+  RowBox[{
+  "Ahmed", " ", "Qureshi", "\[IndentingNewLine]", "404335525", 
+   "\[IndentingNewLine]", 
+   RowBox[{"ahmed", ".", 
+    RowBox[{"qureshi", "@", "ucla"}], ".", "edu"}], "\[IndentingNewLine]", 
+   "hw", "#1"}], "\[IndentingNewLine]", "*)"}]], "Input",
+ Background->RGBColor[0.87, 0.94, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "1", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SetAttributes", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "m1", ",", "m2", ",", "vx1", ",", "vy1", ",", "vz1", ",", "vx2", ",", 
+        "vy2", ",", "vz2", ",", "U"}], "}"}], ",", "Constant"}], "]"}], ";"}],
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"r1", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"x1", ",", "y1", ",", "z1"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"v1", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"vx1", ",", "vy1", ",", "vz1"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"rp", "=", 
+     RowBox[{"{", 
+      RowBox[{"x2", ",", "y2", ",", "z2"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"v2", " ", "=", 
+     RowBox[{"{", 
+      RowBox[{"vx2", ",", "vy2", ",", "vz2"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Rcm", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"m1", "*", "r1"}], "+", 
+        RowBox[{"m2", "*", "rp"}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"m1", "+", "m2"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Vcm", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"m1", "*", "v1"}], " ", "+", " ", 
+        RowBox[{"m2", "*", "v2"}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"m1", "+", "m2"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"v1cm", " ", "=", " ", 
+     RowBox[{"v1", " ", "-", " ", "Vcm"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"v2cm", " ", "=", " ", 
+     RowBox[{"v2", " ", "-", " ", "Vcm"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<a) Velocity of particle 1 = \>\"", ",", " ", "v1cm"}], "]"}],
+    "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<Velocity of particle 2 = \>\"", ",", " ", "v2cm"}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"v21", " ", "=", " ", 
+     RowBox[{"v2cm", " ", "-", " ", "v1cm"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Mu]", "=", 
+     RowBox[{"m1", "*", 
+      RowBox[{"m2", "/", 
+       RowBox[{"(", 
+        RowBox[{"m1", "+", "m2"}], ")"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"p1cm", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"m1", "*", "v1cm"}], "//", "Simplify"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"p1cmr", " ", "=", 
+     RowBox[{"\[Mu]", "*", 
+      RowBox[{"-", "v21"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<b) Momentum of particle 1 = \>\"", ",", " ", "p1cm"}], "]"}],
+    "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\<r mass momentum*-v21 of particle 1 = \>\"", ",", " ", "p1cmr"}], 
+    "]"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", "\"\<Both are equal \\n\>\"", "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"p2cm", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"m2", "*", "v2cm"}], "//", "Simplify"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"p2cmr", " ", "=", 
+     RowBox[{"\[Mu]", "*", "v21"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<Momentum of particle 2 = \>\"", ",", " ", "p2cm"}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\<r mass momentum*v21 of particle 2 = \>\"", ",", " ", "p2cmr"}], 
+    "]"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", "\"\<Both are equal \\n\>\"", "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"T", " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"1", "/", "2"}], "*", "m1", "*", 
+        RowBox[{"(", 
+         RowBox[{"v1cm", ".", "v1cm"}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"1", "/", "2"}], "*", "m2", "*", 
+        RowBox[{"(", 
+         RowBox[{"v2cm", ".", "v2cm"}], ")"}]}]}], "//", "FullSimplify"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Tcm", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"1", "/", "2"}], "*", "\[Mu]", "*", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"-", "v21"}], ")"}], ".", 
+       RowBox[{"(", 
+        RowBox[{"-", "v21"}], ")"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<Kinetic energy = \>\"", ",", " ", "T"}], " ", "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<Kinetic energy cm = \>\"", ",", " ", "Tcm"}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", "\"\<Both are equal\>\"", "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Ecm", " ", "=", " ", 
+     RowBox[{"Tcm", " ", "+", " ", "U"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+   "Print", "[", 
+    "\"\<Total energy is same for both for arbitrary potential energy U \\n\>\
+\"", "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+   "Print", "[", 
+    "\"\<c) 1. incoming velocity vector mass 1 is parallel to its outgoing \
+velocity vector \n2. Sum of incoming and outgoing velocity vectors of mass 1 \
+is equal to those of mass 2\n3. Difference of incoming and outgoing velocity \
+vectors of mass 1 are perpendicular to that of difference of (sum of incoming \
+and outgoing velocity vectors of mass 1 and difference of incoming and out \
+going velocity vectors of mass 2\>\"", "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"a) Velocity of particle 1 = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"vx1", "-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"m1", " ", "vx1"}], "+", 
+        RowBox[{"m2", " ", "vx2"}]}], 
+       RowBox[{"m1", "+", "m2"}]]}], ",", 
+     RowBox[{"vy1", "-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"m1", " ", "vy1"}], "+", 
+        RowBox[{"m2", " ", "vy2"}]}], 
+       RowBox[{"m1", "+", "m2"}]]}], ",", 
+     RowBox[{"vz1", "-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"m1", " ", "vz1"}], "+", 
+        RowBox[{"m2", " ", "vz2"}]}], 
+       RowBox[{"m1", "+", "m2"}]]}]}], "}"}]}],
+  SequenceForm[
+  "a) Velocity of particle 1 = ", {$CellContext`vx1 - ($CellContext`m1 + \
+$CellContext`m2)^(-1) ($CellContext`m1 $CellContext`vx1 + $CellContext`m2 \
+$CellContext`vx2), $CellContext`vy1 - ($CellContext`m1 + \
+$CellContext`m2)^(-1) ($CellContext`m1 $CellContext`vy1 + $CellContext`m2 \
+$CellContext`vy2), $CellContext`vz1 - ($CellContext`m1 + \
+$CellContext`m2)^(-1) ($CellContext`m1 $CellContext`vz1 + $CellContext`m2 \
+$CellContext`vz2)}],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Velocity of particle 2 = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"vx2", "-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"m1", " ", "vx1"}], "+", 
+        RowBox[{"m2", " ", "vx2"}]}], 
+       RowBox[{"m1", "+", "m2"}]]}], ",", 
+     RowBox[{"vy2", "-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"m1", " ", "vy1"}], "+", 
+        RowBox[{"m2", " ", "vy2"}]}], 
+       RowBox[{"m1", "+", "m2"}]]}], ",", 
+     RowBox[{"vz2", "-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"m1", " ", "vz1"}], "+", 
+        RowBox[{"m2", " ", "vz2"}]}], 
+       RowBox[{"m1", "+", "m2"}]]}]}], "}"}]}],
+  SequenceForm[
+  "Velocity of particle 2 = ", {$CellContext`vx2 - ($CellContext`m1 + \
+$CellContext`m2)^(-1) ($CellContext`m1 $CellContext`vx1 + $CellContext`m2 \
+$CellContext`vx2), $CellContext`vy2 - ($CellContext`m1 + \
+$CellContext`m2)^(-1) ($CellContext`m1 $CellContext`vy1 + $CellContext`m2 \
+$CellContext`vy2), $CellContext`vz2 - ($CellContext`m1 + \
+$CellContext`m2)^(-1) ($CellContext`m1 $CellContext`vz1 + $CellContext`m2 \
+$CellContext`vz2)}],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"b) Momentum of particle 1 = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"m1", " ", "m2", " ", 
+       RowBox[{"(", 
+        RowBox[{"vx1", "-", "vx2"}], ")"}]}], 
+      RowBox[{"m1", "+", "m2"}]], ",", 
+     FractionBox[
+      RowBox[{"m1", " ", "m2", " ", 
+       RowBox[{"(", 
+        RowBox[{"vy1", "-", "vy2"}], ")"}]}], 
+      RowBox[{"m1", "+", "m2"}]], ",", 
+     FractionBox[
+      RowBox[{"m1", " ", "m2", " ", 
+       RowBox[{"(", 
+        RowBox[{"vz1", "-", "vz2"}], ")"}]}], 
+      RowBox[{"m1", "+", "m2"}]]}], "}"}]}],
+  SequenceForm[
+  "b) Momentum of particle 1 = ", {$CellContext`m1 $CellContext`m2 \
+($CellContext`m1 + $CellContext`m2)^(-1) ($CellContext`vx1 - \
+$CellContext`vx2), $CellContext`m1 $CellContext`m2 ($CellContext`m1 + \
+$CellContext`m2)^(-1) ($CellContext`vy1 - $CellContext`vy2), $CellContext`m1 \
+$CellContext`m2 ($CellContext`m1 + $CellContext`m2)^(-1) ($CellContext`vz1 - \
+$CellContext`vz2)}],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"r mass momentum*-v21 of particle 1 = \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"m1", " ", "m2", " ", 
+       RowBox[{"(", 
+        RowBox[{"vx1", "-", "vx2"}], ")"}]}], 
+      RowBox[{"m1", "+", "m2"}]], ",", 
+     FractionBox[
+      RowBox[{"m1", " ", "m2", " ", 
+       RowBox[{"(", 
+        RowBox[{"vy1", "-", "vy2"}], ")"}]}], 
+      RowBox[{"m1", "+", "m2"}]], ",", 
+     FractionBox[
+      RowBox[{"m1", " ", "m2", " ", 
+       RowBox[{"(", 
+        RowBox[{"vz1", "-", "vz2"}], ")"}]}], 
+      RowBox[{"m1", "+", "m2"}]]}], "}"}]}],
+  SequenceForm[
+  "r mass momentum*-v21 of particle 1 = ", {$CellContext`m1 $CellContext`m2 \
+($CellContext`m1 + $CellContext`m2)^(-1) ($CellContext`vx1 - \
+$CellContext`vx2), $CellContext`m1 $CellContext`m2 ($CellContext`m1 + \
+$CellContext`m2)^(-1) ($CellContext`vy1 - $CellContext`vy2), $CellContext`m1 \
+$CellContext`m2 ($CellContext`m1 + $CellContext`m2)^(-1) ($CellContext`vz1 - \
+$CellContext`vz2)}],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"Both are equal \\n\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Momentum of particle 2 = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"m1", " ", "m2", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "vx1"}], "+", "vx2"}], ")"}]}], 
+      RowBox[{"m1", "+", "m2"}]], ",", 
+     FractionBox[
+      RowBox[{"m1", " ", "m2", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "vy1"}], "+", "vy2"}], ")"}]}], 
+      RowBox[{"m1", "+", "m2"}]], ",", 
+     FractionBox[
+      RowBox[{"m1", " ", "m2", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "vz1"}], "+", "vz2"}], ")"}]}], 
+      RowBox[{"m1", "+", "m2"}]]}], "}"}]}],
+  SequenceForm[
+  "Momentum of particle 2 = ", {$CellContext`m1 $CellContext`m2 \
+($CellContext`m1 + $CellContext`m2)^(-1) (-$CellContext`vx1 + \
+$CellContext`vx2), $CellContext`m1 $CellContext`m2 ($CellContext`m1 + \
+$CellContext`m2)^(-1) (-$CellContext`vy1 + $CellContext`vy2), $CellContext`m1 \
+$CellContext`m2 ($CellContext`m1 + $CellContext`m2)^(-1) (-$CellContext`vz1 + \
+$CellContext`vz2)}],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"r mass momentum*v21 of particle 2 = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"m1", " ", "m2", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "vx1"}], "+", "vx2"}], ")"}]}], 
+      RowBox[{"m1", "+", "m2"}]], ",", 
+     FractionBox[
+      RowBox[{"m1", " ", "m2", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "vy1"}], "+", "vy2"}], ")"}]}], 
+      RowBox[{"m1", "+", "m2"}]], ",", 
+     FractionBox[
+      RowBox[{"m1", " ", "m2", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "vz1"}], "+", "vz2"}], ")"}]}], 
+      RowBox[{"m1", "+", "m2"}]]}], "}"}]}],
+  SequenceForm[
+  "r mass momentum*v21 of particle 2 = ", {$CellContext`m1 $CellContext`m2 \
+($CellContext`m1 + $CellContext`m2)^(-1) (-$CellContext`vx1 + \
+$CellContext`vx2), $CellContext`m1 $CellContext`m2 ($CellContext`m1 + \
+$CellContext`m2)^(-1) (-$CellContext`vy1 + $CellContext`vy2), $CellContext`m1 \
+$CellContext`m2 ($CellContext`m1 + $CellContext`m2)^(-1) (-$CellContext`vz1 + \
+$CellContext`vz2)}],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"Both are equal \\n\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Kinetic energy = \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{"m1", " ", "m2", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"vx1", "-", "vx2"}], ")"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"vy1", "-", "vy2"}], ")"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"vz1", "-", "vz2"}], ")"}], "2"]}], ")"}]}], 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{"m1", "+", "m2"}], ")"}]}]]}],
+  SequenceForm[
+  "Kinetic energy = ", 
+   Rational[1, 
+     2] $CellContext`m1 $CellContext`m2 ($CellContext`m1 + \
+$CellContext`m2)^(-1) (($CellContext`vx1 - $CellContext`vx2)^2 + \
+($CellContext`vy1 - $CellContext`vy2)^2 + ($CellContext`vz1 - \
+$CellContext`vz2)^2)],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Kinetic energy cm = \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{"m1", " ", "m2", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"vx1", "-", "vx2"}], ")"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"vy1", "-", "vy2"}], ")"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"vz1", "-", "vz2"}], ")"}], "2"]}], ")"}]}], 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{"m1", "+", "m2"}], ")"}]}]]}],
+  SequenceForm[
+  "Kinetic energy cm = ", 
+   Rational[1, 
+     2] $CellContext`m1 $CellContext`m2 ($CellContext`m1 + \
+$CellContext`m2)^(-1) (($CellContext`vx1 - $CellContext`vx2)^2 + \
+($CellContext`vy1 - $CellContext`vy2)^2 + ($CellContext`vz1 - \
+$CellContext`vz2)^2)],
+  Editable->False]], "Print"],
+
+Cell[BoxData["\<\"Both are equal\"\>"], "Print"],
+
+Cell[BoxData["\<\"Total energy is same for both for arbitrary potential \
+energy U \\n\"\>"], "Print"],
+
+Cell[BoxData["\<\"c) 1. incoming velocity vector mass 1 is parallel to its \
+outgoing velocity vector \\n2. Sum of incoming and outgoing velocity vectors \
+of mass 1 is equal to those of mass 2\\n3. Difference of incoming and \
+outgoing velocity vectors of mass 1 are perpendicular to that of difference \
+of (sum of incoming and outgoing velocity vectors of mass 1 and difference of \
+incoming and out going velocity vectors of mass 2\"\>"], "Print"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"2", "a"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SetAttributes", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"a", ",", "h", ",", "\[Rho]"}], "}"}], ",", "Constant"}], 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"r1", " ", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"rp", "=", "a"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Phi]1", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Phi]2", "=", 
+     RowBox[{"2", "\[Pi]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"z1", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"z2", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "h"}], "/", "a"}], "*", "r"}], "+", "h"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dr", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", "r1", ",", "rp"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"d\[Phi]", "=", 
+     RowBox[{"{", 
+      RowBox[{"\[Phi]", ",", "\[Phi]1", ",", "\[Phi]2"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dz", " ", "=", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", "z1", ",", "z2"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dv", " ", "=", "r"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"M", "=", " ", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{"\[Rho]", "*", "dv"}], ",", "dr", ",", "d\[Phi]", ",", "dz"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"x", "=", 
+     RowBox[{"r", "*", 
+      RowBox[{"Cos", "[", "\[Phi]", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"y", "=", 
+     RowBox[{"r", "*", 
+      RowBox[{"Sin", "[", "\[Phi]", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"xcm", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"\[Rho]", "*", "x", "*", "dv"}], ",", "dr", ",", "d\[Phi]", 
+        ",", "dz"}], "]"}], "/", "M"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ycm", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"\[Rho]", "*", "y", "*", "dv"}], ",", "dr", ",", "d\[Phi]", 
+        ",", "dz"}], "]"}], "/", "M"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"zcm", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"\[Rho]", "*", "z", "*", "dv"}], ",", "dr", ",", "d\[Phi]", 
+        ",", "dz"}], "]"}], "/", "M"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Rcm", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"xcm", ",", "ycm", ",", "zcm"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\<2)(a)For a flat cone in xy plane the CM =, \>\"", ",", " ", "Rcm"}], 
+    "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"2)(a)For a flat cone in xy plane the CM =, \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     FractionBox["h", "4"]}], "}"}]}],
+  SequenceForm[
+  "2)(a)For a flat cone in xy plane the CM =, ", {
+   0, 0, Rational[1, 4] $CellContext`h}],
+  Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"2", "b"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SetAttributes", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"a", ",", "\[Sigma]"}], "}"}], ",", "Constant"}], "]"}], ";"}],
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"x11", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"-", "a"}], "/", 
+      RowBox[{"Sqrt", "[", "2", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"x12", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"y11", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"y12", " ", "=", " ", 
+     RowBox[{"x", "+", 
+      RowBox[{"a", "/", 
+       RowBox[{"Sqrt", "[", "2", "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"x21", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"x22", " ", "=", " ", 
+     RowBox[{"a", "/", 
+      RowBox[{"Sqrt", "[", "2", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"y21", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"y22", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"-", "x"}], "+", 
+      RowBox[{"a", "/", 
+       RowBox[{"Sqrt", "[", "2", "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dx1", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "x11", ",", "x12"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dy1", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", "y11", ",", "y12"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dx2", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "x21", ",", "x22"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dy2", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", "y21", ",", "y22"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"da", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"M", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"\[Sigma]", "*", "da"}], ",", "dx1", ",", "dy1"}], "]"}], "+",
+       " ", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"\[Sigma]", "*", "da"}], ",", "dx1", ",", "dy1"}], "]"}]}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"xcm", "  ", "=", " ", 
+     RowBox[{
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"\[Sigma]", "*", "x", "*", "da"}], ",", "dx1", ",", "dy1"}], 
+       "]"}], "+", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"\[Sigma]", "*", "x", "*", "da"}], ",", "dx2", ",", "dy2"}], 
+       "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ycm", "  ", "=", " ", 
+     RowBox[{
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"\[Sigma]", "*", "y", "*", "da"}], ",", "dx1", ",", "dy1"}], 
+       "]"}], "+", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"\[Sigma]", "*", "y", "*", "da"}], ",", "dx2", ",", "dy2"}], 
+       "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Xcm", " ", "=", " ", 
+     RowBox[{"xcm", "/", "M"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Ycm", " ", "=", " ", 
+     RowBox[{"ycm", "/", "M"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Rcm", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Xcm", ",", "Ycm"}], "}"}], " ", "//", "Simplify"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<2)(b)Center of mass = \>\"", ",", " ", "Rcm"}], 
+    "]"}]}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"2)(b)Center of mass = \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     FractionBox["a", 
+      RowBox[{"3", " ", 
+       SqrtBox["2"]}]]}], "}"}]}],
+  SequenceForm[
+  "2)(b)Center of mass = ", {
+   0, Rational[1, 3] 2^Rational[-1, 2] $CellContext`a}],
+  Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "3", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"$Assumptions", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", ">", "0"}], " ", "&&", " ", 
+       RowBox[{"b", " ", "\[GreaterEqual]", " ", "0"}], " ", "&&", " ", 
+       RowBox[{"a", "\[GreaterEqual]", "b"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"V", "[", "r_", "]"}], " ", "=", " ", "0"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dr", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"d\[Theta]", " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"b", "/", 
+         RowBox[{"r", "^", "2"}]}], ")"}], "/", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           RowBox[{"b", "^", "2"}], "/", 
+           RowBox[{
+            RowBox[{"(", "r", ")"}], "^", "2"}]}], "-", 
+          RowBox[{
+           RowBox[{"V", "[", "r", "]"}], "/", "Ecm"}]}], ")"}], "^", 
+        RowBox[{"(", 
+         RowBox[{"1", "/", "2"}], ")"}]}]}], "*", "dr"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"rmin", " ", "=", " ", "a"}], ";"}], " ", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"del\[Theta]", " ", "=", " ", 
+     RowBox[{"2", " ", "*", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{"d\[Theta]", ",", 
+        RowBox[{"{", 
+         RowBox[{"r", ",", "rmin", ",", "\[Infinity]"}], "}"}]}], "]"}]}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"b", "[", "\[Theta]_", "]"}], " ", "=", " ", 
+     RowBox[{"b", "/.", " ", 
+      RowBox[{
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{"\[Theta]", " ", "\[Equal]", " ", 
+          RowBox[{"\[Pi]", " ", "-", " ", "del\[Theta]"}]}], ",", "b"}], 
+        "]"}], "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Sigma]", " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"b", "[", "\[Theta]", "]"}]}], "/", 
+        RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "*", 
+       RowBox[{
+        RowBox[{"b", "'"}], "[", "\[Theta]", "]"}]}], "//", 
+      "FullSimplify"}]}], " ", ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Sigma]total", " ", "=", " ", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{
+       RowBox[{"\[Sigma]", "*", 
+        RowBox[{"Sin", "[", "\[Theta]", "]"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Phi]", ",", "0", ",", 
+         RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Theta]", ",", "0", ",", "\[Pi]"}], "}"}]}], "]"}]}], ";"}],
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\<3) Differential scattering cross-section = \>\"", ",", "\[Sigma]"}], 
+    "]"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<Total cross-section = \>\"", ",", "\[Sigma]total"}], 
+    "]"}]}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"3) Differential scattering cross-section = \"\>", 
+   "\[InvisibleSpace]", 
+   FractionBox[
+    SuperscriptBox["a", "2"], "4"]}],
+  SequenceForm[
+  "3) Differential scattering cross-section = ", 
+   Rational[1, 4] $CellContext`a^2],
+  Editable->False]], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Total cross-section = \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    SuperscriptBox["a", "2"], " ", "\[Pi]"}]}],
+  SequenceForm["Total cross-section = ", $CellContext`a^2 Pi],
+  Editable->False]], "Print"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "4", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"SetAttributes", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "e", ",", "k", ",", "p"}], "}"}], ",", "Constant"}], 
+    "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"$Assumptions", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", ">", "0"}], " ", "&&", " ", 
+       RowBox[{"b", " ", "\[GreaterEqual]", " ", "0"}], " ", "&&", " ", 
+       RowBox[{"k", ">", "0"}], " ", "&&", " ", 
+       RowBox[{"T", " ", ">", " ", "0"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"V", "[", "r_", "]"}], " ", "=", " ", 
+     RowBox[{"k", "/", "r"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Ecm", " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"1", "/", "2"}], "*", "\[Mu]", "*", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"r", "'"}], "[", "t", "]"}], "^", "2"}]}], "+", 
+      RowBox[{
+       RowBox[{"L", "^", "2"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"2", "*", "\[Mu]", "*", 
+         RowBox[{
+          RowBox[{"r", "[", "t", "]"}], "^", "2"}]}], ")"}]}], " ", "+", " ", 
+      RowBox[{"V", "[", 
+       RowBox[{"r", "[", "t", "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"L", " ", "=", " ", 
+     RowBox[{"b", "*", "p"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"p", " ", "=", " ", 
+     RowBox[{"p", "/.", 
+      RowBox[{
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{"T", "\[Equal]", 
+          RowBox[{
+           RowBox[{"p", "^", "2"}], "/", 
+           RowBox[{"(", 
+            RowBox[{"2", "\[Mu]"}], ")"}]}]}], ",", "p"}], "]"}], "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"v", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"r", "'"}], "[", "t", "]"}], "/.", 
+      RowBox[{
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{"T", "\[Equal]", "Ecm"}], ",", 
+         RowBox[{
+          RowBox[{"r", "'"}], "[", "t", "]"}]}], "]"}], "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Theta]d", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Theta]", "'"}], "[", "t", "]"}], "/.", 
+      RowBox[{
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{"L", "\[Equal]", 
+          RowBox[{"\[Mu]", "*", 
+           RowBox[{
+            RowBox[{"r", "[", "t", "]"}], "^", "2"}], "*", 
+           RowBox[{
+            RowBox[{"\[Theta]", "'"}], "[", "t", "]"}]}]}], ",", 
+         RowBox[{
+          RowBox[{"\[Theta]", "'"}], "[", "t", "]"}]}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"d\[Theta]dr", " ", "=", " ", 
+     RowBox[{"\[Theta]d", "/", "v"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"rmin", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"r", "[", "t", "]"}], "/.", 
+      RowBox[{
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{"v", "\[Equal]", "0"}], ",", 
+         RowBox[{"r", "[", "t", "]"}]}], "]"}], "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"del\[Theta]", " ", "=", " ", 
+     RowBox[{"Integrate", "[", 
+      RowBox[{"d\[Theta]dr", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"r", "[", "t", "]"}], ",", "rmin", ",", "\[Infinity]"}], 
+        "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"b", "[", "\[CapitalTheta]_", "]"}], "=", 
+     RowBox[{"b", "/.", 
+      RowBox[{
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"\[Pi]", "-", 
+           RowBox[{"2", "del\[Theta]"}]}], "\[Equal]", "\[CapitalTheta]"}], 
+         ",", "b"}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[Sigma]", "[", "\[CapitalTheta]_", "]"}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          RowBox[{"b", "[", "\[CapitalTheta]", "]"}]}], "/", 
+         RowBox[{"Sin", "[", "\[CapitalTheta]", "]"}]}], "*", 
+        RowBox[{
+         RowBox[{"b", "'"}], "[", "\[CapitalTheta]", "]"}]}], "//", 
+       "TrigReduce"}], "//", "FullSimplify"}]}], ";"}], "\[IndentingNewLine]",
+    "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<4)Rutherford differential cross-section = \>\"", ",", " ", 
+     RowBox[{"\[Sigma]", "[", "\[CapitalTheta]", "]"}]}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"4)Rutherford differential cross-section = \"\>", 
+   "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["k", "2"], " ", 
+     SuperscriptBox[
+      RowBox[{"Csc", "[", 
+       FractionBox["\[CapitalTheta]", "2"], "]"}], "4"]}], 
+    RowBox[{"16", " ", 
+     SuperscriptBox["T", "2"]}]]}],
+  SequenceForm[
+  "4)Rutherford differential cross-section = ", 
+   Rational[1, 16] $CellContext`k^2 $CellContext`T^(-2) 
+   Csc[Rational[1, 2] $CellContext`\[CapitalTheta]]^4],
+  Editable->False]], "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "5", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SetAttributes", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"m", ",", "R", ",", "\[CapitalOmega]"}], "}"}], ",", " ", 
+      "Constant"}], "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"$Assumptions", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Element", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+          "m", ",", "R", ",", "t", ",", " ", "\[CapitalOmega]", ",", "v0", 
+           ",", "\[Theta]"}], "}"}], ",", " ", "Reals"}], "]"}], "&&", " ", 
+       RowBox[{"m", ">", "0"}], " ", "&&", " ", 
+       RowBox[{"R", ">", "0"}], " ", "&&", " ", 
+       RowBox[{"t", "\[GreaterEqual]", "0"}], " ", "&&", " ", 
+       RowBox[{"\[CapitalOmega]", "\[GreaterEqual]", "0"}], " ", "&&", " ", 
+       RowBox[{"v0", ">", "0"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"m", " ", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"R", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[CapitalOmega]", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"x0", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"-", "R"}], "/", "2"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"y0", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"z0", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"r", "[", "t_", "]"}], " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"x", "[", "t", "]"}], ",", 
+       RowBox[{"y", "[", "t", "]"}], ",", 
+       RowBox[{"z", "[", "t", "]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Omega]", "=", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "\[CapitalOmega]"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Fcen", "[", "t_", "]"}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{"-", "m"}], "*", 
+      RowBox[{"Cross", "[", 
+       RowBox[{"\[Omega]", ",", 
+        RowBox[{"Cross", "[", 
+         RowBox[{"\[Omega]", ",", 
+          RowBox[{"r", "[", "t", "]"}]}], "]"}]}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Fcor", "[", "t_", "]"}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{"-", "2"}], "*", "m", "*", 
+      RowBox[{"Cross", "[", 
+       RowBox[{"\[Omega]", ",", 
+        RowBox[{
+         RowBox[{"r", "'"}], "[", "t", "]"}]}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Fre", "[", "t_", "]"}], " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"F", "[", "t_", "]"}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{"Fcen", "[", "t", "]"}], " ", "+", " ", 
+      RowBox[{"Fcor", "[", "t", "]"}], " ", "+", " ", 
+      RowBox[{"Fre", "[", "t", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Neq", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"F", "[", "t", "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], " ", "==", " ", 
+        RowBox[{"m", "*", 
+         RowBox[{
+          RowBox[{"x", "''"}], "[", "t", "]"}]}]}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"F", "[", "t", "]"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}], " ", "==", " ", 
+        RowBox[{"m", "*", 
+         RowBox[{
+          RowBox[{"y", "''"}], "[", "t", "]"}]}]}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"F", "[", "t", "]"}], "[", 
+         RowBox[{"[", "3", "]"}], "]"}], " ", "==", " ", 
+        RowBox[{"m", "*", 
+         RowBox[{
+          RowBox[{"z", "''"}], "[", "t", "]"}]}]}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Ic", "[", 
+      RowBox[{"v0_", ",", "\[Theta]_"}], "]"}], "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "[", "0", "]"}], "\[Equal]", "x0"}], ",", 
+       RowBox[{
+        RowBox[{"y", "[", "0", "]"}], "\[Equal]", "y0"}], ",", 
+       RowBox[{
+        RowBox[{"z", "[", "0", "]"}], "\[Equal]", "z0"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"x", "'"}], "[", "0", "]"}], " ", "\[Equal]", " ", 
+        RowBox[{"v0", "*", 
+         RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], ",", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"y", "'"}], "[", "0", "]"}], "\[Equal]", " ", 
+        RowBox[{"v0", "*", 
+         RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}], ",", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"z", "'"}], "[", "0", "]"}], " ", "\[Equal]", " ", "0"}]}], 
+      "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"eqnlist", "[", 
+      RowBox[{"v0_", ",", "\[Theta]_"}], "]"}], "=", " ", 
+     RowBox[{"Join", "[", " ", 
+      RowBox[{"Neq", ",", 
+       RowBox[{"Ic", "[", 
+        RowBox[{"v0", ",", "\[Theta]"}], "]"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"soln", "[", 
+     RowBox[{"v0_", ",", "\[Theta]_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"DSolve", "[", 
+        RowBox[{
+         RowBox[{"eqnlist", "[", 
+          RowBox[{"v0", ",", "\[Theta]"}], "]"}], ",", 
+         RowBox[{"r", "[", "t", "]"}], ",", "t"}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "//", "ExpToTrig"}], "//", 
+     "Simplify"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"rotf", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ";"}], "  ", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"labf", "[", "t_", "]"}], " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Cos", "[", 
+          RowBox[{"\[CapitalOmega]", "*", "t"}], "]"}], ",", 
+         RowBox[{"-", 
+          RowBox[{"Sin", "[", 
+           RowBox[{"\[CapitalOmega]", "*", "t"}], "]"}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Sin", "[", 
+          RowBox[{"\[CapitalOmega]", "*", "t"}], "]"}], ",", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"\[CapitalOmega]", "*", "t"}], "]"}]}], "}"}]}], "}"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"frame", "[", 
+      RowBox[{"f_", ",", "t_"}], "]"}], "=", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"f", "\[Equal]", "1"}], ",", "rotf", ",", 
+       RowBox[{"labf", "[", "t", "]"}]}], "]"}]}], ";"}], " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"rp", "[", 
+      RowBox[{"f_", ",", "v0_", ",", "\[Theta]_", ",", "t_"}], "]"}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"frame", "[", 
+        RowBox[{"f", ",", "t"}], "]"}], ".", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"x", "[", "t", "]"}], ",", 
+         RowBox[{"y", "[", "t", "]"}]}], "}"}]}], "/.", " ", 
+      RowBox[{"soln", "[", 
+       RowBox[{"v0", ",", "\[Theta]"}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"rlp", "[", 
+      RowBox[{"f_", ",", "t_"}], "]"}], " ", "=", " ", 
+     RowBox[{
+      RowBox[{"frame", "[", 
+       RowBox[{"f", ",", "t"}], "]"}], ".", 
+      RowBox[{"{", 
+       RowBox[{"x0", ",", "y0"}], "}"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"xline", "[", 
+      RowBox[{"f_", ",", "t_"}], "]"}], ":=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"frame", "[", 
+         RowBox[{"f", ",", "t"}], "]"}], ".", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "R"}], ",", "0"}], "}"}]}], ",", 
+       RowBox[{
+        RowBox[{"frame", "[", 
+         RowBox[{"f", ",", "t"}], "]"}], ".", 
+        RowBox[{"{", 
+         RowBox[{"R", ",", "0"}], "}"}]}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"yline", "[", 
+      RowBox[{"f_", ",", "t_"}], "]"}], ":=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"frame", "[", 
+         RowBox[{"f", ",", "t"}], "]"}], ".", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{"-", "R"}]}], "}"}]}], ",", 
+       RowBox[{
+        RowBox[{"frame", "[", 
+         RowBox[{"f", ",", "t"}], "]"}], ".", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "R"}], "}"}]}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"reflines", "[", 
+     RowBox[{"f_", ",", "t_"}], "]"}], ":=", 
+    RowBox[{"Graphics", "[", 
+     RowBox[{"{", 
+      RowBox[{"Green", ",", 
+       RowBox[{"Arrow", "[", 
+        RowBox[{"xline", "[", 
+         RowBox[{"f", ",", "t"}], "]"}], "]"}], ",", "Red", ",", 
+       RowBox[{"Arrow", "[", 
+        RowBox[{"yline", "[", 
+         RowBox[{"f", ",", "t"}], "]"}], "]"}]}], "}"}], "]"}]}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"timeont", "[", 
+     RowBox[{"f_", ",", "v0_", ",", "\[Theta]_"}], "]"}], ":=", 
+    RowBox[{"t", " ", "/.", " ", 
+     RowBox[{"FindRoot", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"R", "^", "2"}], " ", "\[Equal]", " ", 
+        RowBox[{
+         RowBox[{"rp", "[", 
+          RowBox[{"f", ",", "v0", ",", "\[Theta]", ",", "t"}], "]"}], ".", 
+         RowBox[{"rp", "[", 
+          RowBox[{"f", ",", "v0", ",", "\[Theta]", ",", "t"}], "]"}]}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "5.0"}], "}"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"puck", "[", 
+      RowBox[{"f_", ",", "v0_", ",", "\[Theta]_", ",", "t_"}], "]"}], ":=", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Black", ",", 
+        RowBox[{"PointSize", "[", "0.05", "]"}], ",", 
+        RowBox[{"Point", "[", 
+         RowBox[{"rp", "[", 
+          RowBox[{"f", ",", "v0", ",", "\[Theta]", ",", "t"}], "]"}], "]"}]}],
+        "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"launchpoint", "[", 
+      RowBox[{"f_", ",", "t_"}], "]"}], ":=", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Black", ",", 
+        RowBox[{"PointSize", "[", "0.03", "]"}], ",", 
+        RowBox[{"Point", "[", 
+         RowBox[{"rlp", "[", 
+          RowBox[{"f", ",", "t"}], "]"}], "]"}]}], "}"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"tj", "[", 
+      RowBox[{"f_", ",", "v0_", ",", "\[Theta]_"}], "]"}], ":=", 
+     RowBox[{"ParametricPlot", "[", 
+      RowBox[{
+       RowBox[{"rp", "[", 
+        RowBox[{"f", ",", "v0", ",", "\[Theta]", ",", "t"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"timeont", "[", 
+          RowBox[{"f", ",", "v0", ",", "\[Theta]"}], "]"}]}], "}"}]}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"pix", "[", 
+      RowBox[{"f_", ",", "v0_", ",", "\[Theta]_", ",", "t_"}], "]"}], ":=", 
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"Graphics", "[", 
+        RowBox[{"Circle", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0"}], "}"}], ",", "R"}], "]"}], "]"}], ",", 
+       RowBox[{"reflines", "[", 
+        RowBox[{"f", ",", "t"}], "]"}], ",", 
+       RowBox[{"launchpoint", "[", 
+        RowBox[{"f", ",", "t"}], "]"}], ",", 
+       RowBox[{"tj", "[", 
+        RowBox[{"f", ",", "v0", ",", "\[Theta]"}], "]"}], ",", 
+       RowBox[{"puck", "[", 
+        RowBox[{"f", ",", "v0", ",", "\[Theta]", ",", "t"}], "]"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "1.2"}], "R"}], ",", 
+            RowBox[{"1.2", "R"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "1.2"}], "R"}], ",", 
+            RowBox[{"1.2", "R"}]}], "}"}]}], "}"}]}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"Animate", "[", 
+      RowBox[{
+       RowBox[{"GraphicsGrid", "[", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"pix", "[", 
+            RowBox[{"1", ",", "v0", ",", "\[Theta]", ",", "t"}], "]"}], ",", 
+           RowBox[{"pix", "[", 
+            RowBox[{"2", ",", "v0", ",", "\[Theta]", ",", "t"}], "]"}]}], 
+          "}"}], "}"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"timeont", "[", 
+          RowBox[{"2", ",", "v0", ",", "\[Theta]"}], "]"}]}], "}"}]}], "]"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"v0", ",", ".512", ",", "v0"}], "}"}], ",", "0.01", ",", 
+       "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\[Theta]", ",", 
+         RowBox[{"\[Pi]", "/", "4"}], ",", "\[Theta]"}], "}"}], ",", "0", ",",
+        "\[Pi]"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+   "Print", "[", 
+    "\"\<5) Estimated v0 to be .512m/s from \[Theta] = \[Pi]/4 for puck to \
+travel over the same point again\>\"", "]"}], " ", "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<Puck exit time in seconds= \>\"", ",", " ", 
+     RowBox[{"timeont", "[", 
+      RowBox[{"1", ",", "0.513", ",", 
+       RowBox[{"\[Pi]", "/", "4"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`v0$$ = 0.512, $CellContext`\[Theta]$$ = 
+    Rational[1, 4] Pi, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`v0$$], 0.512, $CellContext`v0$$}, 0.01, 1}, {{
+       Hold[$CellContext`\[Theta]$$], Rational[1, 4] 
+       Pi, $CellContext`\[Theta]$$}, 0, Pi}}, Typeset`size$$ = {
+    411., {129., 136.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`v0$167762$$ = 
+    0, $CellContext`\[Theta]$167763$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`v0$$ = 0.512, $CellContext`\[Theta]$$ = 
+        Rational[1, 4] Pi}, "ControllerVariables" :> {
+        Hold[$CellContext`v0$$, $CellContext`v0$167762$$, 0], 
+        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$167763$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Animate[
+        GraphicsGrid[{{
+           $CellContext`pix[
+           1, $CellContext`v0$$, $CellContext`\[Theta]$$, $CellContext`t], 
+           $CellContext`pix[
+           2, $CellContext`v0$$, $CellContext`\[Theta]$$, $CellContext`t]}}], \
+{$CellContext`t, 0, 
+         $CellContext`timeont[
+         2, $CellContext`v0$$, $CellContext`\[Theta]$$]}], 
+      "Specifications" :> {{{$CellContext`v0$$, 0.512, $CellContext`v0$$}, 
+         0.01, 1}, {{$CellContext`\[Theta]$$, Rational[1, 4] 
+          Pi, $CellContext`\[Theta]$$}, 0, Pi}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{462., {190., 197.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"5) Estimated v0 to be .512m/s from \[Theta] = \[Pi]/4 for \
+puck to travel over the same point again\"\>"], "Print"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Puck exit time in seconds= \"\>", "\[InvisibleSpace]", 
+   "3.7434201669029035`"}],
+  SequenceForm["Puck exit time in seconds= ", 3.7434201669029035`],
+  Editable->False]], "Print"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+TrackCellChangeTimes->False,
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 357, 8, 148, "Input"],
+Cell[CellGroupData[{
+Cell[940, 32, 5820, 155, 981, "Input"],
+Cell[CellGroupData[{
+Cell[6785, 191, 1183, 31, 40, "Print"],
+Cell[7971, 224, 1177, 31, 40, "Print"],
+Cell[9151, 257, 1058, 27, 40, "Print"],
+Cell[10212, 286, 1080, 28, 40, "Print"],
+Cell[11295, 316, 52, 0, 43, "Print"],
+Cell[11350, 318, 1130, 30, 40, "Print"],
+Cell[12483, 350, 1152, 30, 40, "Print"],
+Cell[13638, 382, 52, 0, 43, "Print"],
+Cell[13693, 384, 879, 26, 46, "Print"],
+Cell[14575, 412, 885, 26, 46, "Print"],
+Cell[15463, 440, 48, 0, 23, "Print"],
+Cell[15514, 442, 102, 1, 43, "Print"],
+Cell[15619, 445, 451, 5, 81, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16119, 456, 3214, 93, 528, "Input"],
+Cell[19336, 551, 352, 10, 40, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19725, 566, 3864, 111, 548, "Input"],
+Cell[23592, 679, 355, 11, 42, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23984, 695, 3218, 90, 348, "Input"],
+Cell[CellGroupData[{
+Cell[27227, 789, 311, 9, 43, "Print"],
+Cell[27541, 800, 252, 6, 23, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27842, 812, 4833, 137, 428, "Input"],
+Cell[32678, 951, 565, 16, 49, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33280, 972, 13879, 399, 968, "Input"],
+Cell[47162, 1373, 2271, 45, 404, "Output"],
+Cell[CellGroupData[{
+Cell[49458, 1422, 134, 1, 23, "Print"],
+Cell[49595, 1425, 230, 5, 23, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
