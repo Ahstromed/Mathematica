@@ -21,7 +21,7 @@ Notebook[{
 Cell[BoxData[
  RowBox[{"(*", "\[IndentingNewLine]", " ", 
   RowBox[{
-  "Ahmed", " ", "Qureshi", "\[IndentingNewLine]", "404335525", 
+  "Ahmed", " ", "Qureshi", "\[IndentingNewLine]", "-", 
    "\[IndentingNewLine]", 
    RowBox[{"ahmed", ".", 
     RowBox[{"qureshi", "@", "ucla"}], ".", "edu"}], "\[IndentingNewLine]", 
