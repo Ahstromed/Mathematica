@@ -1,3 +1,3 @@
 # Mathematica
 
-Code samples from Mathematica prokects
+Code samples from Mathematica projects
